@@ -344,11 +344,12 @@ function initializeFileTree() {
 	system.files["/about/about.txt"] = `onimenです。2002年11月26日生まれです。
 	主にJavaとJavascriptで開発をしています。
 	他にも、Python, Go言語などもに時々使います。
-	このポートフォリオは一枚のjsファイルに書いていますが、
-	Node.js、Vue.jsでSPAを作ったりもします。`;
+	JavaではEclipse、JavascriptではVSCodeを利用しています。
+	このサイトでは一枚のjsファイルに書いていますが、
+	Node.js、Vue.jsでSPAを作ったりもします。
+	これまでに製作した作品は../products/からご覧ください。`;
 	system.files["/products/TheLowHP.link"] = "https://portal.eximradar.jp/thelow";
 	system.files["/products/HMage-Mod.link"] = "https://hmage123456.github.io/hmgemod/";
-	system.files["/links/twitter.link"] = "https://twitter.com/onim_en";
 	system.files["/links/github.link"] = "https://github.com/Oni-Men";
 }
 
