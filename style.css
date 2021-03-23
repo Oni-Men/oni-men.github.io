@@ -1,0 +1,45 @@
+html, body {
+  margin: 0;
+  background-color: black;
+  padding: 1em 0.5em;
+  font-family: 'Source Code Pro', monospace;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+p {
+  margin: 0;
+}
+
+form {
+  display: inline;
+}
+
+.white {
+  color: white;
+}
+
+.green {
+  color: #3cb371;
+}
+
+.yellow {
+  color: #fef263;
+}
+
+.blue {
+  color: rgb(104, 146, 223)
+}
+
+.input {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  font-size: 1em;
+  font-family: inherit;
+  width: 50%;
+}
