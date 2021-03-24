@@ -1,0 +1,162 @@
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+	background-color: #111;
+	color: #ddd;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Source Code Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", monospace;
+}
+
+p {
+	margin: 0 0.1em;
+}
+
+a {
+	color: rgb(0,100,200);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: rgb(0,80,160);
+}
+
+label {
+	display: block;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	-webkit-padding: 0.4em 0;
+	padding: 0.4em;
+	margin: 0 0 0.5em 0;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+input:disabled {
+	color: #ccc;
+}
+
+button {
+	color: #333;
+	background-color: #f4f4f4;
+	outline: none;
+}
+
+button:disabled {
+	color: #999;
+}
+
+button:not(:disabled):active {
+	background-color: #ddd;
+}
+
+button:focus {
+	border-color: #666;
+}
+
+.butter-l {
+	color: #fce94f;
+}
+.butter-m {
+	color: #edd400;
+}
+.butter-d {
+	color: #c4a000;
+}
+
+.orange-l {
+	color: #fcaf3e;
+}
+.orange-m {
+	color: #f57900;
+}
+.orange-d {
+	color: #ce5c00;
+}
+
+.chocolate-l {
+	color: #e9b96e;
+}
+.chocolate-m {
+	color: #c17d11;
+}
+.chocolate-d {
+	color: #8f5902;
+}
+
+.chameleon-l {
+	color: #8ae234;
+}
+.chameleon-m {
+	color: #73d216;
+}
+.chameleon-d {
+	color: #4e9a06;
+}
+
+.blue-l {
+	color: #729fcf;
+}
+.blue-m {
+	color: #3465a4;
+}
+.blue-d {
+	color: #204a87;
+}
+
+.plum-l {
+	color: #ad7fa8;
+}
+.plum-m {
+	color: #75507b;
+}
+.plum-d {
+	color: #5c3566;
+}
+
+.red-l {
+	color: #ef2929;
+}
+.red-m {
+	color: #cc0000;
+}
+.red-d {
+	color: #a40000;
+}
+
+.aluminium-1 {
+	color: #eeeeec;
+}
+.aluminium-2 {
+	color: #d3d7cf;
+}
+.aluminium-3 {
+	color: #babdb6;
+}
+.aluminium-4 {
+	color: #888a85;
+}
+.aluminium-5 {
+	color: #555753;
+}
+.aluminium-6 {
+	color: #2e3436;
+}
