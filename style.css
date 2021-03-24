@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   background-color: black;
   padding: 1em 0.5em;
@@ -32,6 +33,10 @@ form {
 
 .blue {
   color: rgb(104, 146, 223)
+}
+
+a {
+  color: #fef263;
 }
 
 .input {

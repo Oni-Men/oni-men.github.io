@@ -215,10 +215,14 @@ function println(str, ...prefix) {
 		p.append(...prefix);
 	}
 
+	const parseAction = (text) => {
+		return text.replace(/\[(.+)\]\((.+)\)/, `<a href="javascript:void(0);" onClick="handleCommand('$2')">$1</a>`);
+	};
+
 	str.split("\n").forEach((line) => {
 		const text = document.createElement("span");
 		text.classList.add("white");
-		text.innerText = line;
+		text.innerHTML = parseAction(line);
 		p.append(text, document.createElement("br"));
 	});
 
@@ -347,7 +351,7 @@ function initializeFileTree() {
 	JavaではEclipse、JavascriptではVSCodeを利用しています。
 	このサイトでは一枚のjsファイルに書いていますが、
 	Node.js、Vue.jsでSPAを作ったりもします。
-	これまでに製作した作品は../products/からご覧ください。`;
+	これまでに製作した作品は[/products](cd /products)	からご覧ください。`;
 	system.files["/products/TheLowHP.link"] = "https://portal.eximradar.jp/thelow";
 	system.files["/products/HMage-Mod.link"] = "https://hmage123456.github.io/hmgemod/";
 	system.files["/links/github.link"] = "https://github.com/Oni-Men";
