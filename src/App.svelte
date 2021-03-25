@@ -64,12 +64,14 @@
 			<Line {...line} />
 		{/if}
 	{/each}
-	<p>
-		<span class="chameleon-m">{system.username} </span>
-		<span class="blue-m">{system.path} </span>
-		<span class="plum-l">$ </span>
+	<div class="flex">
+		<div class="prefix">
+			<span class="chameleon-m">{system.username}</span><span class="blue-m">{system.path}</span><span class="plum-l"
+				>$
+			</span>
+		</div>
 		<input id="input" bind:value={input} on:keydown={handleEnter} />
-	</p>
+	</div>
 </main>
 
 <style>
@@ -79,7 +81,16 @@
 		max-width: 240px;
 	}
 
-	input {
+	span {
+		margin-right: 0.8em;
+	}
+
+	.flex {
+		display: flex;
+	}
+
+	#input {
+		display: inline;
 		color: inherit;
 		background: transparent;
 		border: none;
@@ -87,7 +98,7 @@
 		padding: 0;
 		font-size: 1em;
 		font-family: inherit;
-		width: 50%;
+		flex-grow: 1;
 	}
 
 	@media (min-width: 640px) {
