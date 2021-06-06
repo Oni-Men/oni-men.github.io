@@ -4,8 +4,13 @@
 	export let system = null;
 	export let commands = {};
 
+	let history_index = 0;
+	let history = [];
+
 	let lines = [];
 	let input = "";
+
+	let inputElement = null;
 
 	function println(data) {
 		if (data === "\u007F") {
@@ -17,15 +22,61 @@
 		}
 	}
 
-	function handleEnter(event) {
+	function handleInput(event) {
+		switch (event.key) {
+			case "Enter":
+				println({
+					username: system.username,
+					path: system.path,
+					text: input,
+				});
+				handleCommand(input);
+				input = "";
+				break;
+			case "Tab":
+				event.preventDefault();
+				if (input) {
+					const args = input.split(" ");
+					const text = args[args.length - 1];
+				}
+				break;
+			case "ArrowUp":
+			case "ArrowDown":
+				if (event.key === "ArrowUp") {
+					if (history_index == history.length) {
+						history.push(input);
+					}
+					history_index--;
+				} else {
+					history_index++;
+				}
+
+				if (history_index < 0) {
+					history_index = 0;
+				}
+
+				if (history_index >= history.length) {
+					history_index = history.length - 1;
+				}
+
+				console.log(history);
+
+				input = history[history_index];
+
+				setTimeout(() => {
+					inputElement.focus();
+					inputElement.selectionStart = input.length;
+				}, 1);
+				break;
+		}
+
 		if (event.key === "Enter") {
-			println({
-				username: system.username,
-				path: system.path,
-				text: input,
-			});
-			handleCommand(input);
-			input = "";
+		} else if (event.key === "Tab") {
+			event.preventDefault();
+			if (input) {
+				const args = input.split(" ");
+				const text = args[args.length - 1];
+			}
 		}
 	}
 
@@ -33,6 +84,9 @@
 		if (!text) {
 			return;
 		}
+
+		history.push(text);
+		history_index = history.length;
 
 		const split = text.split(" ");
 		const label = split[0];
@@ -49,6 +103,12 @@
 		system = system;
 	}
 
+	function sendWelcomMessage() {
+		println("WELCOME TO Onimen's PORTFOLIO");
+		println('Type "help" to list all command');
+		println("(C) 2021 Onimen ALL RIGHT RESERVED.");
+	}
+
 	document.body.addEventListener("click", (event) => {
 		if (event.target === document.body) {
 			document.querySelector("#input").focus();
@@ -56,7 +116,7 @@
 	});
 </script>
 
-<main on:load={println("(C) 2021 Onimen ALL RIGHT RESERVED.")}>
+<main on:load={sendWelcomMessage()}>
 	{#each lines as line}
 		{#if typeof line === "string"}
 			<p>{@html line}</p>
@@ -70,7 +130,7 @@
 				>$
 			</span>
 		</div>
-		<input id="input" bind:value={input} on:keydown={handleEnter} />
+		<input bind:this={inputElement} id="input" bind:value={input} on:keydown={handleInput} />
 	</div>
 </main>
 
