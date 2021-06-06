@@ -4,7 +4,7 @@ export class CommandCat {
 	}
 
 	getUsage() {
-		return "cat [dir]";
+		return "cat [file]";
 	}
 
 	execute(println, system, args) {

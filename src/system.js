@@ -44,13 +44,17 @@ export class System {
 		this.direcotries.push("/about/");
 		this.direcotries.push("/products/");
 		this.direcotries.push("/links/");
-		this.files["/about/about.txt"] = `onimenです。2002年11月26日生まれです。
+		this.files["/about/about.txt"] = `onimen(山本遼太郎)といいます。2002年11月26日生まれです。
 		主にJavaとJavascriptで開発をしています。
 		他にも、Python, Go言語などもに時々使います。
 		JavaではEclipse、JavascriptではVSCodeを利用しています。
-		このサイトでは一枚のjsファイルに書いていますが、
-		Node.js、Vue.jsでSPAを作ったりもします。
+		このポートフォリオはsvelteというフレームワークを使用していますが、
+		Vue.jsでSPAを作ったりもします。
 		これまでに製作した作品は /products からご覧ください。`;
+		this.files["/products/TheLowHP.txt"] = `TheLowはマインクラフトのサーバー上で遊べるRPGです。
+		こちらの公式サイトを制作しました。他のスタッフと話し合いながらロゴも制作しました。`;
+		this.files["/products/HMage-Mod.txt"] = `マインクラフトの海外サーバー(us.shotbow.net)で
+		より楽しく遊ぶためのマインクラフトMODです。自分ともう一人の開発者で共同開発しました。`;
 		this.files["/products/TheLowHP.link"] = "https://portal.eximradar.jp/thelow";
 		this.files["/products/HMage-Mod.link"] = "https://hmage123456.github.io/hmgemod/";
 		this.files["/links/github.link"] = "https://github.com/Oni-Men";

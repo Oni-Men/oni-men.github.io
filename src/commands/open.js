@@ -4,7 +4,7 @@ export class CommandOpen {
 	}
 
 	getUsage() {
-		return "open [dir]";
+		return "open [file]";
 	}
 
 	execute(println, system, args) {
